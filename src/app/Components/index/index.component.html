@@ -1,0 +1,41 @@
+<ngx-spinner bdColor = "rgb(0,0,0)" size = "medium" color = "#fff" type = "line-spin-clockwise-fade" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<div *ngIf="displayTable" class=" container bg-white">
+<table  datatable [dtOptions]="dtOptions"  class="table table-striped">
+  <thead >
+    <tr >
+      <th scope="col"><input type="checkbox" id="checkAll" [checked]="isAllCheckBoxChecked()" (change)="checkAllCheckBox($event)"/></th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phone</th>
+      <th> Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let employee of EmpList;let i=index">
+      <td><input type="checkbox" value="{{employee.empId}}" [(ngModel)]="EmpList[i].checked" /></td>
+      <td>{{employee.empName}}</td>
+      <td>{{employee.empEmail}}</td>
+      <td>{{employee.empAddress}}</td>
+      <td>{{employee.empPhone}}</td>
+      <td>
+
+        <button class="btn" (click)="editEmp(employee)">
+          <mat-icon class="text-warning">edit</mat-icon>
+        </button>
+
+        <button class="btn" (click)="deleteEmp(employee.empId)">
+          <mat-icon  class="text-danger" >delete</mat-icon>
+        </button>
+
+      </td>
+
+
+      </tr>
+
+
+  </tbody>
+
+</table>
+</div>
+<h1 class="text-danger text-center" *ngIf="!displayTable">No Employees Found</h1>

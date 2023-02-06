@@ -1,0 +1,24 @@
+<div class="d-flex p-2 justify-content-between align-items-center">
+  <h5 class="pt-4 mx-3" id="exampleModalLabel">Delete Employee</h5>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="onCancelClick()"
+  ></button>
+</div>
+<hr>
+
+<div class="d-flex flex-column mx-3 my-5">
+		{{message}}
+<span class="text-warning mt-3">This action cannont be undone</span>
+</div>
+
+<div class="position-relative w-100 h-25 bg-light">
+  <div class="position-absolute bottom-0 end-0   p-2 ">
+    <button  tabindex="-1" class="btn mx-3" (click)="onCancelClick()">{{cancelButtonText}}</button>
+    <button  class=" btn btn-danger" (click)="onConfirmClick()" tabindex="1">{{confirmButtonText}}</button>
+  </div>
+
+
+</div>

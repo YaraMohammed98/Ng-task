@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+body{
+  background-color: rgb(240, 240, 240);
+}
+
+.dataTables_info{
+  font-weight: bold;
+  color: rgb(163, 160, 160) !important;
+}
+
+.dataTables_paginate a{
+  margin-right: 15px;
+  text-decoration: none;
+  color:grey;
+  cursor: pointer;
+}
+a.paginate_button.current{
+  color: white;
+  padding: 13px 12px;
+  background-color: #53b0cc !important;
+  border-radius: 5px;
+}
+.dataTables_wrapper .dataTables_paginate {
+  margin-top: 15px;
+  margin-bottom: 30px;
+
+}
+thead th{
+  padding: 15px !important;
+}
